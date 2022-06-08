@@ -250,7 +250,7 @@ func shouldRunController(cfg csioperatorclient.CSIOperatorConfig, infrastructure
 	// Check the correct platform first, it will filter out most CSI driver operators
 	var platform configv1.PlatformType
 	if infrastructure.Status.PlatformStatus != nil {
-		platform = infrastructure.Status.PlatformStatus.Type
+		platform = "Nutanix"
 	}
 	if cfg.Platform != csioperatorclient.AllPlatforms && cfg.Platform != platform {
 		klog.V(5).Infof("Not starting %s: wrong platform %s", cfg.CSIDriverName, platform)
